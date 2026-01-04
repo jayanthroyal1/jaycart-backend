@@ -1,0 +1,11 @@
+<ul>
+      <% products.forEach(p => { %>
+      <li>
+            <%= p.name %> - ₹<%= p.price %>
+            <form method="POST" action="/admin/products/<%= p._id %>/delete">
+                  <button>Delete</button>
+            </form>
+      </li>
+      <% }) %>
+</ul>
+<a href="/admin/products/new">Add Product</a>

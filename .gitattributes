@@ -1,0 +1,10 @@
+# Ensure consistent line endings
+* text=auto
+
+# Treat JS, JSON, and MJS files as text
+*.js text
+*.mjs text
+*.json text
+*.css text
+*.html text
+*.md text
