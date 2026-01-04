@@ -69,10 +69,7 @@ Copy code
 ---
 
 ## Installation
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/jayanthroyal1/jaycart-backend.git
+Clone the repository: [jaycart-backend](https://github.com/jayanthroyal1/jaycart-backend.git)
 cd jaycart-backend
 Install dependencies
 
@@ -81,23 +78,18 @@ Copy code
 npm install
 Main Packages Used
 express
-
 graphql
-
 mongoose
-
 bcrypt
-
 jsonwebtoken
-
 dotenv
-
 cors
 
 Dev Dependencies
 jest
-
 supertest
+cross-env
+nodemon
 
 ---
 
@@ -116,7 +108,6 @@ Note: Replace placeholders with your actual credentials.
 ---
 
 ## Running the Server
-
 Development Mode
 bash
 Copy code
@@ -132,50 +123,59 @@ npm start	Run server in production mode
 npm test	Run all Jest tests
 npx jest --watch	Run tests in watch mode
 
+| Command            | Description                                 |
+| ------------------ | ------------------------------------------- |
+| `npm run dev`      | Run server in development mode with nodemon |
+| `npm start`        | Run server in production mode               |
+| `npm test`         | Run all Jest tests                          |
+| `npx jest --watch` | Run tests in watch mode                     |
+
+
 ---
 
 ## API Overview
 Authentication
+
 Register user
 
 Login user
 
-Logout user
+Logout
 
 Products
-Create, Read, Update, Delete (CRUD)
+
+CRUD operations
 
 Search products
 
 Orders
+
 Place order
 
 Get order details
 
 GraphQL
+
 Queries and mutations for all resources
 
-All protected routes require JWT authentication.
-
+All requests are authenticated via JWT where required.
 
 ---
 
 ## Testing
+Run all tests using Jest:
 
-Run all tests using:
-
-bash
-Copy code
 npm test
-License
-This project is licensed under the MIT License.
 
-yaml
-Copy code
+
+Test files are in /tests
+
+Uses supertest to simulate API requests
 
 ---
 
-If you want, I can also:
-- Add **badges** (Node, MongoDB, License)
-- Improve **API documentation**
-- Convert this into a **professional open-source README**
+## License
+This project is open-source under the MIT License. 
+
+---
+
