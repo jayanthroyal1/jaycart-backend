@@ -9,6 +9,7 @@
     "seed": "node src/seed/seed.js"
   },
   "dependencies": {
+    "@graphql-tools/schema": "^10.0.30",
     "apollo-server-express": "^3.12.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",

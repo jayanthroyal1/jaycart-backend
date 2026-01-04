@@ -3,8 +3,9 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import { ApolloServer } from "apollo-server-express";
+import { makeExecutableSchema } from "@graphql-tools/schema";
+
 import { typeDefs } from "./graphql/index.js";
-import { schemas } from "./graphql/schema/index.js";
 import { resolvers } from "./graphql/resolvers.js";
 import paymentRoutes from "./routes/payment.js";
 import { errorHandler } from "./middleware/error.js";
@@ -30,14 +31,12 @@ app.use("/admin", adminRoutes);
 app.use("/api/order", orderRoutes);
 
 const schema = makeExecutableSchema({
-  typeDefs: schemas,
+  typeDefs,
   resolvers,
 });
 
 const apollo = new ApolloServer({
   schema,
-  typeDefs,
-  resolvers,
   // context: authContext,
   context: graphqlContext,
 });

@@ -1,5 +1,6 @@
-import { productResolvers } from "./product.resolver.js";
 import { authResolvers } from "./auth.resolver.js";
+import { productResolvers } from "./product.resolver.js";
+import { orderResolvers } from "./order.resolver.js";
 
 export const resolvers = {
   Query: {

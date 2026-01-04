@@ -1,6 +1,9 @@
 import { gql } from "apollo-server-express";
 
-const productSchema = gql`
+export const productSchema = gql`
+  # =========================
+  # TYPES
+  # =========================
   type Product {
     id: ID!
     name: String!
@@ -18,6 +21,9 @@ const productSchema = gql`
     limit: Int!
   }
 
+  # =========================
+  # INPUTS
+  # =========================
   input ProductFilterInput {
     search: String
     category: String
@@ -25,20 +31,24 @@ const productSchema = gql`
     maxPrice: Float
   }
 
+  # =========================
+  # ENUMS
+  # =========================
   enum SortOrder {
     PRICE_ASC
     PRICE_DESC
     NEWEST
   }
 
+  # =========================
+  # QUERIES
+  # =========================
   extend type Query {
     products(
       filter: ProductFilterInput
-      page: Int
-      limit: Int
-      sort: SortOrder
+      page: Int = 1
+      limit: Int = 10
+      sort: SortOrder = NEWEST
     ): ProductPage!
   }
 `;
-
-export default productSchema;
